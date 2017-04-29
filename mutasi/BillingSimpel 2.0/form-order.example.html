@@ -1,0 +1,80 @@
+<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+<div class="col-md-8 col-md-offset-2">
+<form action="billingsimpel/billingsimpel.php" method="post">
+<div align="center"><h2>Pesan Sekarang</h2>
+ <div class="form-group">
+  <label for="sel1">Pilih Kategori:</label>
+  <select class="form-control" id="catid">
+<option>Pilih Kategori</option>
+  </select>
+</div>
+            
+      <div class="form-group">
+  <label for="sel1">Pilih Layanan:</label>
+  <select class="form-control" name="pid" id="pid" disabled>
+  </select>
+</div>
+
+
+<div class="form-group">
+                            <label class="control-label" for="text-input">Username Akun Sosial Media</label>
+                            <input class="form-control" name="username" placeholder="contoh: @username" type="text" id="text-input" required>
+                        </div>
+<div class="form-group">
+                            <label class="control-label" for="text-input">Nama Anda</label>
+                            <input class="form-control" name="nama" placeholder="Nama Pemesan" type="text" id="text-input" required>
+                        </div>
+            <div class="form-group">
+                            <label class="control-label" for="text-input">Nomor HP</label>
+                            <input class="form-control" name="nomor_hp-opt-" placeholder="contoh: 08566361206" type="text" id="text-input">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="text-input">Email Anda</label>
+                            <input class="form-control" name="email-opt-" placeholder="contoh: emailanda@example.com" type="text" id="text-input">
+                        </div>
+
+<br>
+<div align="center">
+<button type="submit" class="btn btn-primary btn-lg">Pesan Sekarang</button></div>
+</form>
+</div>
+
+
+        </div>
+
+       <script>
+$.ajax({
+      url : "billingsimpel/billingsimpel.php",
+      type: "GET",
+      data :{showCategory:'1'},
+    success: function(data, textStatus, jqXHR)
+    {
+      data = JSON.parse(data);
+      var n = '';
+        for (val in data) {
+          n += "<option value='"+data[val]['id']+"'>"+data[val]['name']+"</option>";
+        }
+        $('#catid').append(n);
+
+$('#catid').on('change', function() {
+  $.ajax({
+      url : "billingsimpel/billingsimpel.php",
+      type: "GET",
+      data :{showProducts:this.value},
+    success: function(data, textStatus, jqXHR)
+    {
+      data = JSON.parse(data);
+      var n = '';
+        for (val in data) {
+          n += "<option value='"+data[val]['id']+"'>"+data[val]['name']+"</option>";
+        }
+        $('#pid').html(n);
+ $("#pid").removeAttr('disabled');
+
+}
+  });
+});
+
+}
+  });
+</script>

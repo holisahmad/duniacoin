@@ -1,0 +1,13 @@
+Halo Rekan {NAMA}
+
+Berikut ini adalah data yang dapat anda gunakan untuk Login ke website kami
+
+Username : {USERNAME}
+Password : {PASSWORD}
+Token    : {NEWTOKEN}
+
+Silahkan Catat Data Login di Atas
+Karena Username, Password dan Token Sangat Penting Untuk Login Ke Member Area.
+
+Administrator
+https://www.solutionprofit.com

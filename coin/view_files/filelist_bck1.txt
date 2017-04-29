@@ -1,0 +1,12 @@
+D:\view_files\buttonhot_bg.png
+D:\view_files\menu_bg.png
+D:\view_files\menuitemhot_bg.png
+D:\view_files\ebab_mbmcp.png
+D:\view_files\ebab_mbmcp_d.png
+D:\view_files\ebab_mbmcp_d2.png
+D:\view_files\ebab_mbmcp_c.png
+D:\view_files\ebab_mbmcp_c2.png
+D:\view_files\mbjsmbmcp.js
+D:\view_files\mbcsmbmcp.css
+D:\view.htm
+D:\view_files\filelist_bck1.txt

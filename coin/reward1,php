@@ -1,0 +1,146 @@
+<?php
+function check_claim($reward_id,$user_session){
+$query = mysql_query ("select * from claimrewards where user='$user_session' and reward_id='$reward_id'");
+return mysql_num_rows($query);
+}
+
+?>
+<style>
+.img0{
+    width: 195px; height: 130px;
+}
+.table {
+    border-collapse: collapse;
+}
+
+.table, .table th, .table td {
+    border: 1px solid black;
+}
+</style>
+<?
+	if($user_status > 0 ) {
+?>
+<style type="text/css">
+body,td,th {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+}
+</style>
+<?
+
+$sql=mysql_query("select * from omzet where username='$user_session'");
+$jleft=0;
+$jright=0;
+
+while($row=mysql_fetch_row($sql)) {
+	$jleft = $jleft + $row[2];
+	$jright = $jright + $row[3];
+}
+
+?>
+
+  <h3><strong>Rewards</h3>
+
+    <p>You only can claim 1 reward every month!</p>
+
+<table style="width: 100%;" border="0" align="center" cellpadding="3" cellspacing="3" class="table">
+
+  <tr>
+    <td><img src="/apps/rweowqweyg.jpg" class="img0"></td>
+    <td><h3>
+      200jt <br>left | right
+    </h3>
+<div>Current Omset: <?= potong($jleft); ?> | <?= potong($jright); ?></div>
+<div>Status: Not claimed</div>
+<button class="claim" data-current_omset="<?= potong($jleft); ?> | <?= potong($jright); ?>" data-reward_id="Iphone" data-useleft="200000000" data-useright="200000000" href="#" style="margin-top: 15px; padding: 8px 15px; background-color: green; color: white; display: inline-block;"><?php echo (check_claim(1,$user_session)>0) ? "CLAIMED": "CLAIM"; ?></button></td>
+  </tr>
+  <tr>
+    <td><img src="/apps/rweowqweyg2.jpg" class="img0"></td>
+    <td><h3>
+      500jt <br>left | right
+    </h3>
+<div>Current Omset: <?= potong($jleft); ?> | <?= potong($jright); ?></div>
+<div>Status: Not claimed</div>
+<button class="claim" data-current_omset="<?= potong($jleft); ?> | <?= potong($jright); ?>" data-reward_id="Laptop" data-useleft="500000000" data-useright="500000000" href="#" style="margin-top: 15px; padding: 8px 15px; background-color: green; color: white; display: inline-block;"><?php echo (check_claim(2,$user_session)>0) ? "CLAIMED": "CLAIM"; ?></button></td>
+  </tr>
+  <tr>
+    <td><img src="/apps/rweowqweyg3.jpg" class="img0"></td>
+    <td><h3>
+      1 Miliar <br>left | right
+    </h3>
+<div>Current Omset: <?= potong($jleft); ?> | <?= potong($jright); ?></div>
+<div>Status: Not claimed</div>
+<button class="claim" data-current_omset="<?= potong($jleft); ?> | <?= potong($jright); ?>" data-current_omset="<?= potong($jleft); ?> | <?= potong($jright); ?>" data-reward_id="Motor" data-useleft="1000000000" data-useright="1000000000" href="#" style="margin-top: 15px; padding: 8px 15px; background-color: green; color: white; display: inline-block;"><?php echo (check_claim(3,$user_session)>0) ? "CLAIMED": "CLAIM"; ?></button></td>
+  </tr>
+  <tr>
+    <td><img src="/apps/rweowqweyg4.jpg" class="img0"></td>
+    <td><h3>
+      7 Miliar <br>left | right
+    </h3>
+<div>Current Omset: <?= potong($jleft); ?> | <?= potong($jright); ?></div>
+<div>Status: Not claimed</div>
+<button class="claim" data-current_omset="<?= potong($jleft); ?> | <?= potong($jright); ?>" data-reward_id="Mobil 1" data-useleft="7000000000" data-useright="7000000000" href="#" style="margin-top: 15px; padding: 8px 15px; background-color: green; color: white; display: inline-block;"><?php echo (check_claim(4,$user_session)>0) ? "CLAIMED": "CLAIM"; ?></button></td>
+  </tr>
+  <tr>
+    <td><img src="/apps/rweowqweyg5.jpg" class="img0"></td>
+    <td><h3>
+      15 Miliar <br>left | right
+    </h3>
+<div>Current Omset: <?= potong($jleft); ?> | <?= potong($jright); ?></div>
+<div>Status: Not claimed</div>
+<button class="claim" data-current_omset="<?= potong($jleft); ?> | <?= potong($jright); ?>" data-reward_id="Mobil 2" data-useleft="15000000000" data-useright="15000000000" href="#" style="margin-top: 15px; padding: 8px 15px; background-color: green; color: white; display: inline-block;"><?php echo (check_claim(5,$user_session)>0) ? "CLAIMED": "CLAIM"; ?></button></td>
+  </tr>
+  <tr>
+    <td><img src="/apps/rweowqweyg6.jpg" class="img0"></td>
+    <td><h3>
+      35 Miliar <br>left | right
+    </h3>
+<div>Current Omset: <?= potong($jleft); ?> | <?= potong($jright); ?></div>
+<div>Status: Not claimed</div>
+<button class="claim" data-current_omset="<?= potong($jleft); ?> | <?= potong($jright); ?>" data-reward_id="Mobil 3" data-useleft="35000000000" data-useright="35000000000" href="#" style="margin-top: 15px; padding: 8px 15px; background-color: green; color: white; display: inline-block;"><?php echo (check_claim(6,$user_session)>0) ? "CLAIMED": "CLAIM"; ?></button></td>
+  </tr>
+  <tr>
+    <td><img src="/apps/rweowqweyg7.jpg" class="img0"></td>
+    <td><h3>
+      100 Miliar <br>left | right
+    </h3>
+<div>Current Omset: <?= potong($jleft); ?> | <?= potong($jright); ?></div>
+<div>Status: Not claimed</div>
+<button class="claim" data-current_omset="<?= potong($jleft); ?> | <?= potong($jright); ?>" data-reward_id="Rumah" data-useleft="100000000000" data-useright="100000000000" href="#" style="margin-top: 15px; padding: 8px 15px; background-color: green; color: white; display: inline-block;"><?php echo (check_claim(7,$user_session)>0) ? "CLAIMED": "CLAIM"; ?></button></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+$(function(){
+
+$(".claim").click (function(event){
+event.preventDefault();
+clicked_btn = $(this);
+clicked_btn.prop("disabled", 1).text("Proccess");
+user = "<?php echo $user_session ?>";
+reward_id = $(this).data("reward_id");
+useleft = $(this).data("useleft");
+useright = $(this).data("useright");
+current_omset = $(this).data("current_omset");
+
+var return_data;
+$.post ("claimreward.php", {current_omset: current_omset, user: user, reward_id: reward_id, useleft: useleft, useright:useright}, function(data){
+return_data = $.parseJSON (data);
+}).done(function(){
+if (return_data){
+alert ("Claim Success! please contact our customer service for confirm your reward!");
+}
+
+clicked_btn.prop("disabled", 0).text("CLAIMED");
+window.location.reload();
+});
+});
+
+});
+</script>
+<?
+} else {
+echo "<meta http-equiv=\"refresh\" content=\"1; url=illegal.html\">";
+}
+?>
